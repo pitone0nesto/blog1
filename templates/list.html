@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is 記事一覧</p>
+  </div>
+</div>
+
+{% endblock header %}
+
+{% block content %}
+  <div class="container">
+  <a href = "{% url 'create' %}" class = "btn btn-primary">新規作成</a>
+  </div>
+  {% for item in object_list %}
+  <div class="card" style="width: 180rem;">
+    <h5 class = "card_header">{{item.category}}</h5>
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <h7 class="card-title">{{item.postdate}}</h5>
+      <a href="{% url 'detail' item.pk %}" class="btn btn-primary">Go other</a>
+        </div>
+      </div>
+  {% endfor %}
+  </div>
+{% endblock content %}  
