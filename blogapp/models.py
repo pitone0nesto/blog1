@@ -5,7 +5,7 @@ class SampleModel(models.Model):
     title = models.CharField(max_length=100)
     number = models.IntegerField()
 
-CATEGORY = (('business','ビジネス'),('life','生活'))
+CATEGORY = (('business','内政'),('life','生活'),('war','合戦'))
 class BlogModel(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
